@@ -1,0 +1,21 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown-item {
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.countdown-item span {
+    font-size: 36px;
+    font-weight: bold;
+}
