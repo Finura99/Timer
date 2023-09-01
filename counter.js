@@ -1,72 +1,51 @@
-
 //Assiging the variables so that they will replace the string to a singular noun of it.
 
-function updateCountdown() {
-    const currentDate = new Date();
-    const targetDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 10, 1);
+(function () {
+  const second = 1000,
+    minute = second * 60,
+    hour = minute * 60,
+    day = hour * 24,
+    month = 30;
+    console.log(month)
 
-    // parameters inside of date constructor includes the year, month and day which is customisable
-    const timeLeft = targetDate - currentDate;
-    //difference between the current and target
+  let today = new Date(),
+    dd = String(today.getDate()).padStart(2, "0"),
+    mm = String(today.getDate() + 1).padStart(2, "0"),
+    yy = today.getFullYear();
+    console.log(dd)
     
-    
-    const months = Math.floor(timeLeft / (1000 * 60 * 60 * 24 * 30));
-    const days = Math.floor((timeLeft % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-    //Math calculations assigned to variables
+    today = dd + "/" + mm + "/" + yy;
+    chooseDate = "15/10/",
+    targetEvent = chooseDate + yy;
+    console.log(targetEvent)
+  
 
-    document.getElementById('months').textContent = months + ":";
-    document.getElementById('days').textContent = days + ":";
-    document.getElementById('hours').textContent = hours + ":";
-    document.getElementById('minutes').textContent = minutes + ":";
-    document.getElementById('seconds').textContent = seconds;
-    //update the html with DOM manipulation 
+  // parameters inside of date constructor includes the year, month and day which is customisable
+  //difference between the current and target
 
-    let singleMonth = "MONTH";
-    let singleDay = "DAY";
-    let singleHour = "HOUR";
-    let singleMinute = "MINUTE";
-    let singleSecond = "SECOND";
-    //assigning strings to singular nouns
+  if (today > birthday) {
+    birthday = dayMonth + nextYear;
+  }
+  //end
+  
+  const countDown = new Date(birthday).getTime(),
+      x = setInterval(function() {    
 
-    if (months <= 1) {
-        document.getElementById("singlemonth").textContent =  singleMonth;
-    }
+        const now = new Date().getTime(),
+              distance = countDown - now;
+          document.getElementById("months").innerText = Math.floor(timeLeft / (month)),
+          document.getElementById("days").innerText = Math.floor(timeLeft / (day)),
+          document.getElementById("hours").innerText = Math.floor((timeLeft % (day)) / (hour)),
+          document.getElementById("minutes").innerText = Math.floor((timeLeft % (hour)) / (minute)),
+          document.getElementById("seconds").innerText = Math.floor((timeLeft % (minute)) / second);
 
-    if (days <= 1) {
-        document.getElementById("singleday").textContent = singleDay;
-    } else {
-        document.getElementById("singlesecond").textContent = "DAYS";
-    }
-
-    if (hours <= 1) {
-        document.getElementById("singlehour").textContent = singleHour;
-    } else {
-        document.getElementById("singlehour").textContent = "HOURS";
-    } 
-
-     if (seconds <= 1) {
-         document.getElementById("singlesecond").textContent = singleSecond;
-    } else {
-        document.getElementById("singlesecond").textContent = "SECONDS";
-    }
-
-    const hideMonth = document.getElementById("hide-month");
-    const hideDay = document.getElementById("hide-day");
-
-    if (months <= 0) {
-        console.log("check")
-        hideMonth.style.display = "none" 
-    }
-    if (days <= 0) {
-        hideDay.style.display = "none";
-    }
-}
-
-
-// Call the function initially and update every second
-updateCountdown();
-setInterval(updateCountdown, 1000);
-//used dry principle to cut down 10 lines of code
+        //do something later when date is reached
+        if (distance < 0) {
+          document.getElementById("headline").innerText = "It's my birthday!";
+          document.getElementById("countdown").style.display = "none";
+          document.getElementById("content").style.display = "block";
+          clearInterval(x);
+        }
+        //seconds
+      }, 0)
+  }());

@@ -1,50 +1,96 @@
-/* styles.css */
+
 body {
     margin: auto;
     justify-content: center;
     display: flex;
     align-items: center;
-    background-image: url("Flag_of_the_International_Maritime_Organization.svg.png");
-    background-size: cover;
-    position: relative;
+    background-color: lightgray;
 }
+
 
 
 .countdown {
+    position: absolute;
     display:inline-flex;
     justify-content: space-around;
     align-items: center;
-    flex-shrink: 0;
-    background: linear-gradient(180deg, #08402c 0%, rgba(44, 167, 236, 0.49) 98.58%, rgba(255, 0, 0, 0.00) 99.99%);
+    height: 200px;
+    width:470px;
+    margin-top: 1000px;
+    padding: 20px;
+    
     border-radius: 15px;
-    width:700px;
-    margin-top: 900px;
-    padding: 10px;
-    position: fixed;
+    box-shadow: -20px 12px 30px 0 rgba(0,0,0,.15);
+    background: linear-gradient(180deg, #080f40 0%, rgba(44, 167, 236, 0.49) 98.58%, rgba(255, 0, 0, 0.00) 99.99%);
 }
 
 .countdown-item {
-    margin: 0 10px;
-    font-size: 25px;
-    font-weight: 400;
+    position: relative;
     text-align: center;
+    font-size: 23px;
+    bottom: 10px;
+    
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 .countdown-item span {
-    font-size: 100px;
+    font-size: 40px;
     font-weight: bold;
-    width: 1252px;
-    height: 20px;
-    top: 329px;
-    left: 94px;
-    font-family:'Aksara Bali Galang';
-    justify-content: spa;
+    justify-content: space-around;
+
     color: #FFF;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
 p {
-    color:#FFF;
+    position: relative;
     text-align: center;
+    color: rgba(175,238,238,.70);
+}
+
+#title {
+    position:absolute;
+    top: -10px;
+    font-size: 25px;
+    letter-spacing: .150rem;
+
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    color: #FFF;
+}
+
+#subtitle {
+    position: absolute;
+    top: 150px;
+    letter-spacing: .100rem;
+    color: rgba(255,255,255,0.70);
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+
+#button {
+    position: absolute;
+    top: 190px;
+    border: none;
+    padding: 10px;
+    
+    
+    border-radius: .5rem;
+    /* background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%); */
+    background-color: #6A5ACD;
+    color: rgba(255,255,255,0.90);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#button:hover {
+    background-color:#191970;
+}
+
+#button:active {
+    background-color: #191970;
+    transform: translateY(2px);
 }
 
 
