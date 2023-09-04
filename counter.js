@@ -1,8 +1,8 @@
 function updateCountdown() {
 
-  const currentDate = new Date();
-  let targetDay = 5,
-      targetMonth = 5;
+let currentDate = new Date(),
+    targetDay = 0,
+    targetMonth = 1;
  //console.log(currentDate)
 
   const targetDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + targetMonth, targetDay),
@@ -17,30 +17,31 @@ function updateCountdown() {
         seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
   //Math calculations assigned to variables
 
-  document.getElementById('months').textContent = months,
-  document.getElementById('days').textContent = days,
-  document.getElementById('hours').textContent = hours,
-  document.getElementById('minutes').textContent = minutes,
-  document.getElementById('seconds').textContent = seconds
+  document.getElementById('months').textContent = months + " :",
+  document.getElementById('days').textContent = days + " :",
+  document.getElementById('hours').textContent = hours + " :",
+  document.getElementById('minutes').textContent = minutes + " :",
+  document.getElementById('seconds').textContent = seconds ;
   //update the html with DOM manipulation 
 
-  const eventButton = document.getElementById("button")
+  const eventButton = document.getElementById("button");
 
   eventButton.addEventListener("click", () => {
     window.open("https://www.imo.org/en/About/Events/Pages/default.aspx#")
   })
-
-  const hideMonth = document.getElementById("hide-month");
-  const hideDay = document.getElementById("hide-day");
-
   if (months <= 0) {
-      hideMonth.style.display = "none" 
+      document.getElementById("hide-month").style.display = "none"; 
   }
   if (days <= 0) {
-      hideDay.style.display = "none";
+      document.getElementById("hide-day").style.display = "none";
+  }
+  if (hours <= 0) {
+    document.getElementById("hide-hour").style.display = "none";
   }
 }
 
 // Call the function and update every second (1000 milliseconds)
 updateCountdown();
-setInterval(updateCountdown,1000);
+setInterval(updateCountdown,0);
+console.log()
+clearInterval(updateCountdown);
