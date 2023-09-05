@@ -1,13 +1,14 @@
 function updateCountdown() {
 
 let currentDate = new Date(),
-    targetDay = 0,
-    targetMonth = 1;
+    targetMonth = 0, //months
+    targetDay = 6, //Day
+    targetHour = 0;  //hour
  //console.log(currentDate)
 
-  const targetDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + targetMonth, targetDay),
+  const targetDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + targetMonth, targetDay, targetHour, currentDate.getDay()),
         timeLeft = targetDate - currentDate;
-  //console.log(targetDate) 
+  console.log(targetDate) 
   // parameters inside of date constructor includes the year, month and day which is customisable
 
   const months = Math.floor(timeLeft / (1000 * 60 * 60 * 24 * 30)),
@@ -38,10 +39,10 @@ let currentDate = new Date(),
   if (hours <= 0) {
     document.getElementById("hide-hour").style.display = "none";
   }
+
+let stopTimer = (months && days && hours && minutes && seconds <= 0) ? clearInterval(updateCountdown) : console.log("test")
 }
 
 // Call the function and update every second (1000 milliseconds)
 updateCountdown();
-setInterval(updateCountdown,0);
-console.log()
-clearInterval(updateCountdown);
+setInterval(updateCountdown,1000);
