@@ -89,7 +89,7 @@ p {
 }
 
 #button:active {
-    background-color: #191970;
+    background-color: navy;
     transform: translateY(2px);
 }
 
